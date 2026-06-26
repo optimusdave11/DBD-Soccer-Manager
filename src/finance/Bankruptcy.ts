@@ -1,0 +1,9 @@
+export enum ClubStatus {
+
+  NORMAL = "NORMAL",
+
+  ADMINISTRATION = "ADMINISTRATION",
+
+  BANKRUPT = "BANKRUPT"
+
+}
