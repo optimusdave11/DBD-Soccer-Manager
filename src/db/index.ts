@@ -7,7 +7,6 @@ export * from "./migrations";
 export * from "./repositories/BaseRepository";
 export * from "./repositories/PlayerRepository";
 export * from "./repositories/ClubRepository";
-export * from "./repositories/LeagueRepository";
 export * from "./repositories/CompetitionRepository";
 export * from "./repositories/NationRepository";
 export * from "./repositories/ManagerRepository";

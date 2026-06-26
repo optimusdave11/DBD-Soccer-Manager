@@ -1,22 +1,31 @@
 export const DB_NAME = "FootballManagerDB";
 
-export const DB_VERSION = 1;
+export const DB_VERSION = 2;
 
 export const STORES = {
+  // Master databases
   GAME_WORLD: "gameWorld",
 
-    PLAYERS: "players",
-      CLUBS: "clubs",
-        LEAGUES: "leagues",
-          COMPETITIONS: "competitions",
-            MANAGERS: "managers",
-              NATIONS: "nations",
+  PLAYERS: "players",
+  CLUBS: "clubs",
+  COMPETITIONS: "competitions",
+  MANAGERS: "managers",
+  NATIONS: "nations",
 
-                SAVE_PLAYERS: "savePlayers",
-                  SAVE_CLUBS: "saveClubs",
+  // System
+  METADATA: "metadata",
+  TRANSACTIONS: "transactions",
 
-                    FIXTURES: "fixtures",
-                      TRANSFERS: "transfers",
+  // Save data
+  SAVE_PLAYERS: "savePlayers",
+  SAVE_CLUBS: "saveClubs",
 
-                        SETTINGS: "settings",
-                        } as const;
+  // Gameplay
+  FIXTURES: "fixtures",
+  TRANSFERS: "transfers",
+
+  // Configuration
+  SETTINGS: "settings",
+} as const;
+
+export type StoreName = typeof STORES[keyof typeof STORES];

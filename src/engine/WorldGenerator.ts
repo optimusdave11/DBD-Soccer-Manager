@@ -2,7 +2,6 @@ import {
     clubRepository,
       competitionRepository,
         gameWorldRepository,
-          leagueRepository,
             managerRepository,
               playerRepository,
               } from "../../db";
@@ -18,7 +17,7 @@ import {
                     async generate(options: WorldOptions) {
                         const players = await playerRepository.getAll();
                             const clubs = await clubRepository.getAll();
-                                const leagues = await leagueRepository.getAll();
+                                   
                                     const competitions = await competitionRepository.getAll();
                                         const managers = await managerRepository.getAll();
 
