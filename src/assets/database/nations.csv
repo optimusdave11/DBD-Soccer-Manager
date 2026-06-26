@@ -1,0 +1,212 @@
+id,name,code,continent,confederation,reputation,youthRating,fifaRanking
+1,Albania,ALB,Europe,UEFA,42,38,66
+2,Andorra,AND,Europe,UEFA,10,12,202
+3,Armenia,ARM,Europe,UEFA,32,30,102
+4,Austria,AUT,Europe,UEFA,68,62,25
+5,Azerbaijan,AZE,Europe,UEFA,28,25,115
+6,Belarus,BLR,Europe,UEFA,30,28,95
+7,Belgium,BEL,Europe,UEFA,88,82,3
+8,Bosnia and Herzegovina,BIH,Europe,UEFA,50,44,62
+9,Bulgaria,BUL,Europe,UEFA,45,40,78
+10,Croatia,CRO,Europe,UEFA,78,72,10
+11,Cyprus,CYP,Europe,UEFA,30,27,109
+12,Czechia,CZE,Europe,UEFA,65,60,37
+13,Denmark,DEN,Europe,UEFA,75,70,20
+14,England,ENG,Europe,UEFA,90,88,5
+15,Estonia,EST,Europe,UEFA,25,22,117
+16,Faroe Islands,FRO,Europe,UEFA,22,20,139
+17,Finland,FIN,Europe,UEFA,35,32,59
+18,France,FRA,Europe,UEFA,95,93,2
+19,Georgia,GEO,Europe,UEFA,40,38,55
+20,Germany,GER,Europe,UEFA,93,88,12
+21,Gibraltar,GIB,Europe,UEFA,8,10,210
+22,Greece,GRE,Europe,UEFA,58,50,49
+23,Hungary,HUN,Europe,UEFA,52,46,52
+24,Iceland,ISL,Europe,UEFA,48,44,73
+25,Israel,ISR,Europe,UEFA,45,40,85
+26,Italy,ITA,Europe,UEFA,92,85,9
+27,Kazakhstan,KAZ,Europe,UEFA,22,20,122
+28,Kosovo,KVX,Europe,UEFA,28,28,105
+29,Latvia,LVA,Europe,UEFA,25,22,130
+30,Liechtenstein,LIE,Europe,UEFA,8,10,205
+31,Lithuania,LTU,Europe,UEFA,25,22,127
+32,Luxembourg,LUX,Europe,UEFA,22,25,86
+33,Malta,MLT,Europe,UEFA,18,15,170
+34,Moldova,MDA,Europe,UEFA,22,20,154
+35,Montenegro,MNE,Europe,UEFA,35,32,98
+36,Netherlands,NED,Europe,UEFA,90,87,7
+37,North Macedonia,MKD,Europe,UEFA,35,32,69
+38,Northern Ireland,NIR,Europe,UEFA,45,40,75
+39,Norway,NOR,Europe,UEFA,60,55,34
+40,Poland,POL,Europe,UEFA,68,62,23
+41,Portugal,POR,Europe,UEFA,90,87,6
+42,Republic of Ireland,IRL,Europe,UEFA,58,50,57
+43,Romania,ROU,Europe,UEFA,55,48,47
+44,San Marino,SMR,Europe,UEFA,5,8,215
+45,Scotland,SCO,Europe,UEFA,58,52,38
+46,Serbia,SRB,Europe,UEFA,62,56,30
+47,Slovakia,SVK,Europe,UEFA,52,46,46
+48,Slovenia,SVN,Europe,UEFA,48,44,56
+49,Spain,ESP,Europe,UEFA,95,93,8
+50,Sweden,SWE,Europe,UEFA,72,68,29
+51,Switzerland,SUI,Europe,UEFA,72,65,19
+52,Türkiye,TUR,Europe,UEFA,72,65,28
+53,Ukraine,UKR,Europe,UEFA,65,58,22
+54,Wales,WAL,Europe,UEFA,55,50,44
+55,Russia,RUS,Europe,UEFA,68,62,35
+56,Argentina,ARG,South America,CONMEBOL,97,95,1
+57,Bolivia,BOL,South America,CONMEBOL,40,38,85
+58,Brazil,BRA,South America,CONMEBOL,98,97,4
+59,Chile,CHI,South America,CONMEBOL,65,60,42
+60,Colombia,COL,South America,CONMEBOL,70,68,27
+61,Ecuador,ECU,South America,CONMEBOL,55,52,33
+62,Paraguay,PAR,South America,CONMEBOL,52,50,60
+63,Peru,PER,South America,CONMEBOL,55,52,67
+64,Uruguay,URU,South America,CONMEBOL,80,75,16
+65,Venezuela,VEN,South America,CONMEBOL,38,35,79
+66,Antigua and Barbuda,ATG,North America,CONCACAF,20,18,168
+67,Aruba,ARU,North America,CONCACAF,15,14,192
+68,Bahamas,BAH,North America,CONCACAF,12,12,196
+69,Barbados,BRB,North America,CONCACAF,18,16,175
+70,Belize,BLZ,North America,CONCACAF,14,13,180
+71,Bermuda,BER,North America,CONCACAF,18,17,165
+72,Canada,CAN,North America,CONCACAF,60,55,41
+73,Costa Rica,CRC,North America,CONCACAF,60,55,51
+74,Cuba,CUB,North America,CONCACAF,28,25,138
+75,Curaçao,CUW,North America,CONCACAF,30,28,82
+76,Dominica,DMA,North America,CONCACAF,12,12,185
+77,Dominican Republic,DOM,North America,CONCACAF,18,18,155
+78,El Salvador,SLV,North America,CONCACAF,38,35,72
+79,Grenada,GRN,North America,CONCACAF,15,14,178
+80,Guatemala,GUA,North America,CONCACAF,35,32,90
+81,Guyana,GUY,North America,CONCACAF,20,18,160
+82,Haiti,HAI,North America,CONCACAF,28,25,112
+83,Honduras,HON,North America,CONCACAF,42,38,68
+84,Jamaica,JAM,North America,CONCACAF,45,42,53
+85,Martinique,MTQ,North America,CONCACAF,28,26,132
+86,Mexico,MEX,North America,CONCACAF,80,75,15
+87,Montserrat,MSR,North America,CONCACAF,5,8,213
+88,Nicaragua,NCA,North America,CONCACAF,18,16,162
+89,Panama,PAN,North America,CONCACAF,40,36,71
+90,Puerto Rico,PUR,North America,CONCACAF,20,18,157
+91,Saint Kitts and Nevis,SKN,North America,CONCACAF,12,12,190
+92,Saint Lucia,LCA,North America,CONCACAF,12,12,187
+93,Saint Vincent and the Grenadines,VIN,North America,CONCACAF,14,13,183
+94,Suriname,SUR,North America,CONCACAF,25,23,118
+95,Trinidad and Tobago,TRI,North America,CONCACAF,42,38,92
+96,Turks and Caicos Islands,TCA,North America,CONCACAF,5,8,212
+97,United States,USA,North America,CONCACAF,75,72,11
+98,U.S. Virgin Islands,VIR,North America,CONCACAF,5,8,214
+99,British Virgin Islands,VGB,North America,CONCACAF,5,8,211
+100,Cayman Islands,CAY,North America,CONCACAF,8,10,207
+101,Algeria,ALG,Africa,CAF,65,60,36
+102,Angola,ANG,Africa,CAF,38,35,99
+103,Benin,BEN,Africa,CAF,32,30,96
+104,Botswana,BOT,Africa,CAF,28,26,108
+105,Burkina Faso,BFA,Africa,CAF,40,38,63
+106,Burundi,BDI,Africa,CAF,18,16,158
+107,Cameroon,CMR,Africa,CAF,68,65,40
+108,Cape Verde,CPV,Africa,CAF,42,40,58
+109,Central African Republic,CAF,Africa,CAF,15,14,182
+110,Chad,CHA,Africa,CAF,10,10,199
+111,Comoros,COM,Africa,CAF,25,24,106
+112,Congo,CGO,Africa,CAF,30,28,97
+113,DR Congo,COD,Africa,CAF,42,40,65
+114,Djibouti,DJI,Africa,CAF,8,8,204
+115,Egypt,EGY,Africa,CAF,72,65,32
+116,Equatorial Guinea,EQG,Africa,CAF,22,20,134
+117,Eritrea,ERI,Africa,CAF,8,8,203
+118,Eswatini,SWZ,Africa,CAF,15,14,172
+119,Ethiopia,ETH,Africa,CAF,18,17,148
+120,Gabon,GAB,Africa,CAF,35,33,77
+121,Gambia,GAM,Africa,CAF,30,29,87
+122,Ghana,GHA,Africa,CAF,68,65,39
+123,Guinea,GUI,Africa,CAF,42,40,74
+124,Guinea-Bissau,GNB,Africa,CAF,25,23,119
+125,Ivory Coast,CIV,Africa,CAF,72,70,26
+126,Kenya,KEN,Africa,CAF,35,33,101
+127,Lesotho,LES,Africa,CAF,18,16,151
+128,Liberia,LBR,Africa,CAF,25,23,126
+129,Libya,LBA,Africa,CAF,28,25,107
+130,Madagascar,MAD,Africa,CAF,20,18,135
+131,Malawi,MWI,Africa,CAF,22,20,120
+132,Mali,MLI,Africa,CAF,48,46,48
+133,Mauritania,MTN,Africa,CAF,28,26,91
+134,Mauritius,MRI,Africa,CAF,15,14,174
+135,Morocco,MAR,Africa,CAF,72,68,14
+136,Mozambique,MOZ,Africa,CAF,20,18,136
+137,Namibia,NAM,Africa,CAF,25,23,116
+138,Niger,NIG,Africa,CAF,18,16,142
+139,Nigeria,NGA,Africa,CAF,75,72,21
+140,Rwanda,RWA,Africa,CAF,28,26,103
+141,São Tomé and Príncipe,STP,Africa,CAF,8,8,206
+142,Senegal,SEN,Africa,CAF,72,70,17
+143,Seychelles,SEY,Africa,CAF,10,10,197
+144,Sierra Leone,SLE,Africa,CAF,25,23,113
+145,Somalia,SOM,Africa,CAF,8,8,209
+146,South Africa,RSA,Africa,CAF,55,50,61
+147,South Sudan,SSD,Africa,CAF,8,8,208
+148,Sudan,SDN,Africa,CAF,15,14,145
+149,Tanzania,TAN,Africa,CAF,22,20,128
+150,Togo,TOG,Africa,CAF,30,28,93
+151,Tunisia,TUN,Africa,CAF,60,55,45
+152,Uganda,UGA,Africa,CAF,30,28,89
+153,Zambia,ZAM,Africa,CAF,38,35,76
+154,Zimbabwe,ZIM,Africa,CAF,32,30,88
+155,Afghanistan,AFG,Asia,AFC,8,8,201
+156,Australia,AUS,Oceania,AFC,60,55,24
+157,Bahrain,BHR,Asia,AFC,32,28,84
+158,Bangladesh,BAN,Asia,AFC,15,14,181
+159,Bhutan,BHU,Asia,AFC,5,5,216
+160,Brunei,BRU,Asia,AFC,8,8,198
+161,Cambodia,CAM,Asia,AFC,15,14,176
+162,China,CHN,Asia,AFC,52,45,80
+163,Chinese Taipei,TPE,Asia,AFC,18,18,152
+164,Guam,GUM,Asia,AFC,12,12,191
+165,Hong Kong,HKG,Asia,AFC,22,20,143
+166,Indonesia,IDN,Asia,AFC,35,32,126
+167,Iran,IRN,Asia,AFC,62,58,31
+168,Iraq,IRQ,Asia,AFC,42,38,54
+169,Japan,JPN,Asia,AFC,78,75,13
+170,Jordan,JOR,Asia,AFC,35,32,83
+171,Kuwait,KUW,Asia,AFC,30,26,136
+172,Kyrgyzstan,KGZ,Asia,AFC,18,16,114
+173,Laos,LAO,Asia,AFC,10,10,193
+174,Lebanon,LBN,Asia,AFC,25,22,111
+175,Macau,MAC,Asia,AFC,10,10,194
+176,Malaysia,MAS,Asia,AFC,28,25,130
+177,Maldives,MDV,Asia,AFC,15,14,177
+178,Mongolia,MNG,Asia,AFC,8,8,200
+179,Myanmar,MYA,Asia,AFC,18,16,149
+180,Nepal,NEP,Asia,AFC,12,12,186
+181,North Korea,PRK,Asia,AFC,28,25,104
+182,Northern Mariana Islands,NMI,Oceania,AFC,5,5,217
+183,Oman,OMA,Asia,AFC,32,28,81
+184,Pakistan,PAK,Asia,AFC,12,12,188
+185,Palestine,PLE,Asia,AFC,22,20,95
+186,Philippines,PHI,Asia,AFC,22,20,137
+187,Qatar,QAT,Asia,AFC,42,35,70
+188,Saudi Arabia,KSA,Asia,AFC,52,45,56
+189,Singapore,SIN,Asia,AFC,18,16,153
+190,South Korea,KOR,Asia,AFC,70,65,18
+191,Sri Lanka,SRI,Asia,AFC,10,10,195
+192,Syria,SYR,Asia,AFC,25,22,94
+193,Tajikistan,TJK,Asia,AFC,18,16,100
+194,Thailand,THA,Asia,AFC,35,32,113
+195,Timor-Leste,TLS,Asia,AFC,8,8,202
+196,Turkmenistan,TKM,Asia,AFC,12,12,189
+197,United Arab Emirates,UAE,Asia,AFC,42,38,64
+198,Uzbekistan,UZB,Asia,AFC,38,35,43
+199,Vietnam,VIE,Asia,AFC,35,32,116
+200,Yemen,YEM,Asia,AFC,12,12,141
+201,Cook Islands,COK,Oceania,OFC,5,5,218
+202,Fiji,FIJ,Oceania,OFC,22,20,163
+203,New Caledonia,NCL,Oceania,OFC,20,18,160
+204,New Zealand,NZL,Oceania,OFC,35,30,93
+205,Papua New Guinea,PNG,Oceania,OFC,18,16,166
+206,Samoa,SAM,Oceania,OFC,12,10,171
+207,Solomon Islands,SOL,Oceania,OFC,20,18,147
+208,Tahiti,TAH,Oceania,OFC,18,16,156
+209,Tonga,TGA,Oceania,OFC,10,10,173
+210,Vanuatu,VAN,Oceania,OFC,15,14,167
+211,American Samoa,ASA,Oceania,OFC,5,5,219

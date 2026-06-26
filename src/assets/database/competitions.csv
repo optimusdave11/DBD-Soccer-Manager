@@ -1,0 +1,52 @@
+CompetitionID,CompetitionName,CompetitionType,LeagueID,ChampionPrizeMoney,Reputation
+1,Premier League,League,1,"138,000,000",97
+2,La Liga,League,2,"60,000,000",92
+3,Bundesliga,League,3,"65,000,000",90
+4,Serie A,League,4,"55,000,000",88
+5,Ligue 1,League,5,"60,000,000",82
+6,Eredivisie,League,6,"30,000,000",75
+7,Scottish Premiership,League,7,"30,000,000",70
+8,MLS,League,8,"30,000,000",68
+9,Campeonato Brasileiro Série A,League,9,"30,000,000",68
+10,Saudi Pro League,League,10,"30,000,000",67
+11,SÜper Lig,League,11,"30,000,000",75
+12,Liga Portugal,League,12,"30,000,000",75
+13,EFL Championship,League,13,"57,500,000",66
+101,FA Cup,Cup,null,"4,600,000",78
+102,Copa del Rey,Cup,null,"2,500,000",76
+103,DFB-Pokal,Cup,null,"2,500,000",64
+104,Coppa Italia,Cup,null,"2,500,000",75
+105,Coupe de France,Cup,null,"2,500,000",64
+106,KNVB Beker,Cup,null,"1,500,000",62
+107,Scottish Cup,Cup,null,"1,500,000",61
+108,MLS Cup,Cup,null,"1,500,000",59
+109,Copa do Brasil,Cup,null,"1,500,000",61
+110,King's Cup,Cup,null,"1,500,000",60
+111,Turkish Cup,Cup,null,"1,500,000",60
+112,Taça de Portugal,Cup,null,"1,500,000",60
+201,EFL Cup,Cup,null,"2,300,000",58
+202,Scottish League Cup,Cup,null,"1,000,000",55
+203,Taça da Liga,Cup,null,"1,000,000",55
+301,FA Community Shield,Super Cup,null,"1,000,000",48
+302,Supercopa de España,Super Cup,null,"1,000,000",50
+303,DFL-Supercup,Super Cup,null,"1,000,000",50
+304,Supercoppa Italiana,Super Cup,null,"1,000,000",50
+305,Trophée des Champions,Super Cup,null,"1,000,000",49
+306,Johan Cruijff Schaal,Super Cup,null,"1,000,000",48
+307,Saudi Super Cup,Super Cup,null,"1,000,000",47
+308,Turkish Super Cup,Super Cup,null,"1,000,000",47
+309,Supertaça Cãndido de Oliveira,Super Cup,null,"1,000,000",47
+401,UEFA Champions League,Cup,null,"100,000,000",98
+402,UEFA Champions League Qualifying,Cup,null,0,45
+403,UEFA Europa League,Cup,null,"40,000,000",80
+404,UEFA Europa League Qualifying,Cup,null,0,42
+405,UEFA Conference League,Cup,null,"25,000,000",65
+406,UEFA Conference League Qualifying,Cup,null,0,40
+407,UEFA Super Cup,Super Cup,null,"5,000,000",64
+501,FIFA World Cup,Cup,null,0,99
+502,FIFA Club World Cup,Cup,null,0,75
+503,UEFA Euros,Cup,null,0,87
+504,UEFA Nations League,Cup,null,0,78
+505,Copa America,Cup,null,0,83
+506,Africa Cup of Nations,Cup,null,0,80
+507,AFC Asian Cup,Cup,null,0,75
