@@ -1,6 +1,6 @@
-import "./Input.css";
+import "./FMInput.css";
 
-interface InputProps {
+interface FMInputProps {
 
   label: string;
 
@@ -12,7 +12,7 @@ interface InputProps {
 
 }
 
-export default function Input({
+export default function FMInput({
 
   label,
 
@@ -22,7 +22,7 @@ export default function Input({
 
   onChange,
 
-}: InputProps) {
+}: FMInputProps) {
 
   return (
 
