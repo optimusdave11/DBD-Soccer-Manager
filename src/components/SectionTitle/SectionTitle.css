@@ -1,0 +1,36 @@
+.section-title {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 18px;
+}
+
+.section-title h2 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 1.3rem;
+
+  font-weight: 600;
+}
+
+.section-action {
+  border: none;
+
+  background: transparent;
+
+  color: #3DAFFF;
+
+  cursor: pointer;
+
+  font-size: .95rem;
+
+  transition: opacity .2s ease;
+}
+
+.section-action:hover {
+  opacity: .75;
+}

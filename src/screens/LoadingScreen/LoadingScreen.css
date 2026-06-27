@@ -1,0 +1,72 @@
+.loading-screen {
+  width: min(600px, 90%);
+  margin: 0 auto;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.loading-screen h1 {
+  margin: 0 0 20px;
+
+  color: white;
+
+  font-size: 2.2rem;
+
+  font-weight: 700;
+}
+
+.loading-screen p {
+  margin-bottom: 36px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 1rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 14px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.progress-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: linear-gradient(
+    90deg,
+    #3DAFFF,
+    #3E43FF
+  );
+
+  transition: width .35s ease;
+}
+
+.loading-screen span {
+  margin-top: 18px;
+
+  color: white;
+
+  font-weight: 600;
+
+  font-size: .95rem;
+}

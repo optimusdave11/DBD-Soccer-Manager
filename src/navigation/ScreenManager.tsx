@@ -1,61 +1,68 @@
 import { useState } from "react";
 
-import { Screen } from "./Screen";
-
 import MainMenu from "../screens/MainMenu/MainMenu";
 import NewCareer from "../screens/NewCareer/NewCareer";
-import LoadCareer from "../screens/LoadCareer/LoadCareer";
-import Settings from "../screens/Settings/Settings";
+import JobOffers from "../screens/JobOffers/JobOffers";
+
+type Screen =
+  | "mainMenu"
+  | "newCareer"
+  | "jobOffers";
+
+const dummyOffers = [
+  {
+    club: "Burnley",
+    league: "Premier League",
+    squadRating: 73,
+  },
+  {
+    club: "Rennes",
+    league: "Ligue 1",
+    squadRating: 75,
+  },
+  {
+    club: "Torino",
+    league: "Serie A",
+    squadRating: 74,
+  },
+  {
+    club: "Mainz",
+    league: "Bundesliga",
+    squadRating: 76,
+  },
+];
 
 export default function ScreenManager() {
-
-  const [screen, setScreen] =
-    useState(Screen.MAIN_MENU);
+  const [screen, setScreen] = useState<Screen>("mainMenu");
 
   switch (screen) {
+    case "mainMenu":
+      return (
+        <MainMenu
+          onNewCareer={() => setScreen("newCareer")}
+        />
+      );
 
-    case Screen.NEW_CAREER:
+    case "newCareer":
       return (
         <NewCareer
-          openMainMenu={() =>
-            setScreen(Screen.MAIN_MENU)
-          }
+          onBack={() => setScreen("mainMenu")}
+          onContinue={() => setScreen("jobOffers")}
         />
       );
 
-    case Screen.LOAD_CAREER:
+    case "jobOffers":
       return (
-        <LoadCareer
-          openMainMenu={() =>
-            setScreen(Screen.MAIN_MENU)
-          }
-        />
-      );
-
-    case Screen.SETTINGS:
-      return (
-        <Settings
-          openMainMenu={() =>
-            setScreen(Screen.MAIN_MENU)
-          }
+        <JobOffers
+          offers={dummyOffers}
+          onBack={() => setScreen("newCareer")}
+          onViewOffer={(offer) => {
+            console.log(offer);
+          }}
         />
       );
 
     default:
-      return (
-        <MainMenu
-          openNewCareer={() =>
-            setScreen(Screen.NEW_CAREER)
-          }
-          openLoadCareer={() =>
-            setScreen(Screen.LOAD_CAREER)
-          }
-          openSettings={() =>
-            setScreen(Screen.SETTINGS)
-          }
-        />
-      );
-
+      return null;
   }
-
 }

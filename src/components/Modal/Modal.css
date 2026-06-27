@@ -1,0 +1,88 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  z-index: 1000;
+
+  animation: fadeIn .2s ease;
+}
+
+.modal {
+  width: min(500px, 90%);
+
+  padding: 28px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 22px;
+
+  color: white;
+
+  animation: popIn .25s ease;
+}
+
+.modal h2 {
+  margin: 0 0 20px;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+.modal-close {
+  margin-top: 24px;
+
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  color: white;
+
+  background: linear-gradient(
+    90deg,
+    #3DAFFF,
+    #3E43FF
+  );
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

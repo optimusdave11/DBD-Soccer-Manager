@@ -1,0 +1,117 @@
+.contract-offer {
+  width: min(700px, 92%);
+  margin: 0 auto;
+  padding-top: 36px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.contract-offer h1 {
+  margin: 0 0 30px;
+
+  text-align: center;
+
+  color: white;
+
+  font-size: 2rem;
+
+  font-weight: 700;
+}
+
+.contract-card {
+  background: rgba(255,255,255,.08);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,.12);
+
+  border-radius: 22px;
+
+  padding: 28px;
+
+  animation: fadeIn .4s ease;
+}
+
+.contract-card h2 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 1.6rem;
+}
+
+.contract-card > p {
+  margin: 8px 0 28px;
+
+  color: rgba(255,255,255,.72);
+}
+
+.contract-section {
+  margin-bottom: 24px;
+}
+
+.contract-section h3 {
+  margin-bottom: 8px;
+
+  color: white;
+
+  font-size: 1rem;
+}
+
+.contract-section p,
+.contract-section li {
+  color: rgba(255,255,255,.8);
+}
+
+.contract-section ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.contract-card button {
+  margin-top: 12px;
+}
+
+.back-button {
+  position: fixed;
+
+  top: 18px;
+  left: 18px;
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.08);
+
+  backdrop-filter: blur(18px);
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+.back-button:hover {
+  background: rgba(255,255,255,.16);
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
