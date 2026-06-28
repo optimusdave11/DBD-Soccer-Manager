@@ -1,0 +1,59 @@
+.fixture-card {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 18px;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.08);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,.12);
+
+  transition: .2s;
+}
+
+.fixture-card:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255,255,255,.11);
+
+  border-color: rgba(61,175,255,.35);
+}
+
+.fixture-date {
+  min-width: 78px;
+
+  text-align: center;
+
+  color: #3DAFFF;
+
+  font-weight: 700;
+
+  font-size: .95rem;
+}
+
+.fixture-details {
+  flex: 1;
+}
+
+.fixture-details h3 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 1.05rem;
+}
+
+.fixture-details p {
+  margin-top: 6px;
+
+  color: rgba(255,255,255,.72);
+
+  font-size: .9rem;
+}

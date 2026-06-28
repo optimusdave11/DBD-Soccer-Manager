@@ -1,0 +1,47 @@
+.dropdown {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.dropdown label {
+  color: white;
+
+  font-size: .95rem;
+
+  font-weight: 500;
+}
+
+.dropdown select {
+  width: 100%;
+
+  padding: 14px 18px;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(255,255,255,.12);
+
+  background: rgba(255,255,255,.08);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  color: white;
+
+  font-size: .95rem;
+
+  outline: none;
+
+  transition: .2s;
+}
+
+.dropdown select:focus {
+  border-color: rgba(61,175,255,.45);
+}
+
+.dropdown option {
+  background: #181818;
+
+  color: white;
+}

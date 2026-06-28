@@ -1,0 +1,17 @@
+.confirm-message {
+  margin: 0;
+
+  color: rgba(255,255,255,.75);
+
+  line-height: 1.6;
+}
+
+.confirm-actions {
+  margin-top: 28px;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 14px;
+}

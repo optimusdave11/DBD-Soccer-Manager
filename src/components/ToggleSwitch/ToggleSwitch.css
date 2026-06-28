@@ -1,0 +1,63 @@
+.toggle-switch {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  gap: 20px;
+}
+
+.toggle-label {
+  color: white;
+
+  font-size: .95rem;
+
+  font-weight: 500;
+}
+
+.toggle {
+  position: relative;
+
+  width: 56px;
+  height: 30px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.15);
+
+  cursor: pointer;
+
+  transition: .25s;
+}
+
+.toggle.active {
+  background: linear-gradient(
+    90deg,
+    #3DAFFF,
+    #3E43FF
+  );
+}
+
+.toggle-thumb {
+  position: absolute;
+
+  top: 3px;
+  left: 3px;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  transition: transform .25s ease;
+}
+
+.toggle.active .toggle-thumb {
+  transform: translateX(26px);
+}

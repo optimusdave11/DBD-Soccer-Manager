@@ -1,0 +1,48 @@
+.tabs {
+  display: flex;
+
+  gap: 8px;
+
+  padding: 6px;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.08);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.tab {
+  flex: 1;
+
+  padding: 12px 18px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: transparent;
+
+  color: rgba(255,255,255,.7);
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+.tab:hover {
+  color: white;
+}
+
+.tab.active {
+  color: white;
+
+  background: linear-gradient(
+    90deg,
+    #3DAFFF,
+    #3E43FF
+  );
+}

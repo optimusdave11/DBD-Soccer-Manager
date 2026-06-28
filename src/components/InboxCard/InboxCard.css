@@ -1,0 +1,60 @@
+.inbox-card {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 20px;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.08);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,.12);
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+.inbox-card:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255,255,255,.11);
+
+  border-color: rgba(61,175,255,.35);
+}
+
+.inbox-card.unread {
+  border-left: 4px solid #3DAFFF;
+}
+
+.inbox-main {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.inbox-sender {
+  color: rgba(255,255,255,.65);
+
+  font-size: .85rem;
+}
+
+.inbox-main h3 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 1rem;
+}
+
+.inbox-date {
+  color: rgba(255,255,255,.6);
+
+  font-size: .85rem;
+}
