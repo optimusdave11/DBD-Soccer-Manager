@@ -1,59 +1,45 @@
 .fixture-card {
   display: flex;
   align-items: center;
-
-  gap: 18px;
-
-  padding: 18px;
-
-  border-radius: 18px;
-
-  background: rgba(255,255,255,.08);
-
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  border: 1px solid rgba(255,255,255,.12);
-
-  transition: .2s;
+  justify-content: space-between;
+  
+  cursor: pointer;
 }
 
-.fixture-card:hover {
-  transform: translateY(-2px);
-
-  background: rgba(255,255,255,.11);
-
-  border-color: rgba(61,175,255,.35);
+.fixture-result {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.fixture-date {
-  min-width: 78px;
-
-  text-align: center;
-
-  color: #3DAFFF;
-
+.result-badge {
+  width: 28px;
+  height: 28px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  border-radius: 50%;
+  
+  font-size: .8rem;
   font-weight: 700;
-
-  font-size: .95rem;
-}
-
-.fixture-details {
-  flex: 1;
-}
-
-.fixture-details h3 {
-  margin: 0;
-
+  
   color: white;
-
-  font-size: 1.05rem;
 }
 
-.fixture-details p {
-  margin-top: 6px;
+.result-badge.w {
+  background: #2e7d32;
+}
 
-  color: rgba(255,255,255,.72);
+.result-badge.d {
+  background: #f9a825;
+}
 
-  font-size: .9rem;
+.result-badge.l {
+  background: #c62828;
+}
+
+.fixture-score {
+  font-weight: 600;
 }

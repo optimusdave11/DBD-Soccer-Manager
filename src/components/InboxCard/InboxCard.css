@@ -1,60 +1,92 @@
 .inbox-card {
-  display: flex;
+  position: relative;
 
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 18px 20px;
-
-  border-radius: 18px;
-
-  background: rgba(255,255,255,.08);
-
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  border: 1px solid rgba(255,255,255,.12);
-
-  cursor: pointer;
-
-  transition: .2s;
-}
-
-.inbox-card:hover {
-  transform: translateY(-2px);
-
-  background: rgba(255,255,255,.11);
-
-  border-color: rgba(61,175,255,.35);
-}
-
-.inbox-card.unread {
-  border-left: 4px solid #3DAFFF;
-}
-
-.inbox-main {
   display: flex;
   flex-direction: column;
 
-  gap: 6px;
+  gap: 8px;
+
+  padding: 14px 16px;
+
+  border-radius: 12px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.inbox-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.inbox-card.unread {
+  background: rgba(77, 163, 255, 0.08);
+}
+
+.inbox-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .inbox-sender {
-  color: rgba(255,255,255,.65);
-
-  font-size: .85rem;
-}
-
-.inbox-main h3 {
-  margin: 0;
-
-  color: white;
-
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .inbox-date {
-  color: rgba(255,255,255,.6);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
 
-  font-size: .85rem;
+.inbox-subject-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.inbox-subject {
+  margin: 0;
+
+  font-size: 0.95rem;
+
+  font-weight: 500;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.inbox-category {
+  font-size: 0.7rem;
+
+  padding: 2px 8px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: var(--text-secondary);
+
+  white-space: nowrap;
+}
+
+.unread-dot {
+  position: absolute;
+
+  top: 12px;
+  left: 8px;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #4da3ff;
 }

@@ -1,0 +1,45 @@
+.transfer-window-card {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 20px;
+
+  border-radius: 16px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+}
+
+.transfer-window-label {
+  font-size: 0.8rem;
+
+  font-weight: 600;
+
+  color: var(--text-secondary);
+
+  text-transform: uppercase;
+
+  letter-spacing: .08em;
+}
+
+.transfer-window-status {
+  margin: 0;
+
+  font-size: 1.8rem;
+
+  font-weight: 700;
+}
+
+.transfer-window-subtitle {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: .95rem;
+}

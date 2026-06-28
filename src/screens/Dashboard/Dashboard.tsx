@@ -1,48 +1,125 @@
-import TopBar from "../../components/TopBar/TopBar";
-import HeroCard from "../../components/HeroCard/HeroCard";
-import InfoCard from "../../components/InfoCard/InfoCard";
-import DashboardCard from "../../components/DashboardCard/DashboardCard";
-
 import "./Dashboard.css";
 
+import { dashboardManager } from "../../game/dashboard/DashboardManager";
+
+import TopBar from "../../components/TopBar/TopBar";
+import HeroCard from "../../components/HeroCard/HeroCard";
+import TransferWindowCard from "../../components/TransferWindowCard/TransferWindowCard";
+import PreseasonTourCard from "../../components/PreseasonTourCard/PreseasonTourCard";
+import InboxCard from "../../components/InboxCard/InboxCard";
+import FixtureCard from "../../components/FixtureCard/FixtureCard";
+
+import Button from "../../components/Button/Button";
+
 export default function Dashboard() {
+
+  const state =
+    dashboardManager.getState();
+
   return (
-    <div className="dashboard">
+    <main className="dashboard">
 
       <TopBar />
 
-      <div className="dashboard-grid">
+      <section className="dashboard-top">
 
-        <HeroCard />
+        <HeroCard
+          title={state.hero.title}
+          subtitle={state.hero.subtitle}
+        >
 
-        <div className="dashboard-right">
+          <div className="hero-objective">
 
-          <InfoCard
-            title="Transfer Window"
-            value="OPEN"
-            subtitle="31 days remaining"
+            <span>
+              Current Objective
+            </span>
+
+            <h3>
+              {state.hero.objective}
+            </h3>
+
+          </div>
+
+          <Button
+            label="Continue"
+            onClick={() => {}}
           />
 
-          <InfoCard
-            title="Preseason Tour"
-            value="United States"
-            subtitle="0 / 4 matches played"
+        </HeroCard>
+
+        <div className="dashboard-side">
+
+          <TransferWindowCard
+            status={state.transferWindow.status}
+            subtitle={state.transferWindow.subtitle}
+          />
+
+          <PreseasonTourCard
+            country={state.preseason.country}
+            played={state.preseason.played}
+            total={state.preseason.total}
+            nextOpponent={
+              state.preseason.nextOpponent ?? undefined
+            }
+            daysUntilMatch={
+              state.preseason.daysUntilMatch ?? undefined
+            }
           />
 
         </div>
 
-      </div>
+      </section>
 
-      <div className="dashboard-bottom">
+      <section className="dashboard-bottom">
 
-        <DashboardCard title="Inbox" />
+        {state.inbox && (
 
-        <DashboardCard title="Recent Results" />
+          <InboxCard
+            sender={state.inbox.sender}
+            subject={state.inbox.subject}
+            date={state.inbox.date}
+            unread={state.inbox.unread}
+          />
 
-        <DashboardCard title="Upcoming Fixtures" />
+        )}
 
-      </div>
+        <div className="results-card">
 
-    </div>
+          <span className="card-title">
+            Recent Results
+          </span>
+
+          {state.recentResults.map((fixture, index) => (
+
+            <FixtureCard
+              key={index}
+              {...fixture}
+            />
+
+          ))}
+
+        </div>
+
+        <div className="fixtures-card">
+
+          <span className="card-title">
+            Upcoming Fixtures
+          </span>
+
+          {state.upcomingFixtures.map((fixture, index) => (
+
+            <FixtureCard
+              key={index}
+              {...fixture}
+            />
+
+          ))}
+
+        </div>
+
+      </section>
+
+    </main>
   );
+
 }

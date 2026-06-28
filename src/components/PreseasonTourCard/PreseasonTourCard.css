@@ -1,0 +1,45 @@
+.preseason-tour-card {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding: 20px;
+
+  border-radius: 16px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+}
+
+.preseason-tour-label {
+  font-size: .8rem;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: .08em;
+
+  color: var(--text-secondary);
+}
+
+.preseason-tour-card h2,
+.preseason-tour-card p {
+  margin: 0;
+}
+
+.next-match {
+  margin-top: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.next-match small {
+  color: var(--text-secondary);
+}

@@ -5,6 +5,12 @@ interface Props {
   opponent: string;
   competition: string;
   venue: "Home" | "Away";
+
+  score?: string;
+  result?: "W" | "D" | "L";
+  completed?: boolean;
+
+  onClick?: () => void;
 }
 
 export default function FixtureCard({
@@ -12,9 +18,16 @@ export default function FixtureCard({
   opponent,
   competition,
   venue,
+  score,
+  result,
+  completed = false,
+  onClick,
 }: Props) {
   return (
-    <div className="fixture-card">
+    <div
+      className="fixture-card"
+      onClick={onClick}
+    >
 
       <div className="fixture-date">
         {date}
@@ -29,6 +42,24 @@ export default function FixtureCard({
         <p>{competition}</p>
 
       </div>
+
+      {completed && (
+        <div className="fixture-result">
+
+          <span
+            className={`result-badge ${
+              result?.toLowerCase()
+            }`}
+          >
+            {result}
+          </span>
+
+          <span className="fixture-score">
+            {score}
+          </span>
+
+        </div>
+      )}
 
     </div>
   );

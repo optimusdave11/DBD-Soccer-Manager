@@ -1,36 +1,25 @@
 .dashboard {
-  min-height: 100vh;
-
-  padding: 24px 18px 32px;
-
   display: flex;
   flex-direction: column;
 
   gap: 24px;
 
-  background: #0b0d12;
+  padding: 24px;
 }
 
-.dashboard-grid {
+.dashboard-top {
   display: grid;
 
-  grid-template-columns: 1.15fr .95fr;
+  grid-template-columns: 2fr 1fr;
 
-  gap: 18px;
-
-  align-items: stretch;
+  gap: 20px;
 }
 
-.dashboard-right {
+.dashboard-side {
   display: flex;
-
   flex-direction: column;
 
-  gap: 18px;
-}
-
-.dashboard-right .info-card {
-  flex: 1;
+  gap: 20px;
 }
 
 .dashboard-bottom {
@@ -38,41 +27,72 @@
 
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 16px;
+  gap: 20px;
 }
 
-.dashboard-bottom .dashboard-card {
-  min-height: 150px;
+.results-card,
+.fixtures-card {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+
+  padding: 20px;
+
+  border-radius: 16px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
 }
 
-@media (max-width: 768px) {
+.card-title {
+  font-size: 0.8rem;
 
-  .dashboard {
-    padding: 20px 16px 28px;
-  }
+  font-weight: 600;
 
-  .dashboard-grid {
-    grid-template-columns: 1fr .95fr;
-  }
+  text-transform: uppercase;
 
-  .dashboard-bottom .dashboard-card {
-    min-height: 135px;
-  }
+  letter-spacing: 0.08em;
 
+  color: var(--text-secondary);
 }
 
-@media (max-width: 560px) {
+.hero-objective {
+  display: flex;
+  flex-direction: column;
 
-  .dashboard-grid {
+  gap: 6px;
+
+  margin-bottom: 20px;
+}
+
+.hero-objective span {
+  font-size: 0.8rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+
+  color: var(--text-secondary);
+}
+
+.hero-objective h3 {
+  margin: 0;
+
+  font-size: 1.3rem;
+
+  font-weight: 600;
+}
+
+@media (max-width: 1000px) {
+
+  .dashboard-top {
     grid-template-columns: 1fr;
   }
 
-  .dashboard-right {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 16px;
+  .dashboard-bottom {
+    grid-template-columns: 1fr;
   }
 
 }
