@@ -5,10 +5,8 @@ import { dashboardManager } from "../../game/dashboard/DashboardManager";
 import TopBar from "../../components/TopBar/TopBar";
 import HeroCard from "../../components/HeroCard/HeroCard";
 import TransferWindowCard from "../../components/TransferWindowCard/TransferWindowCard";
-import PreseasonTourCard from "../../components/PreseasonTourCard/PreseasonTourCard";
 import InboxCard from "../../components/InboxCard/InboxCard";
 import FixtureCard from "../../components/FixtureCard/FixtureCard";
-
 import Button from "../../components/Button/Button";
 
 export default function Dashboard() {
@@ -50,20 +48,8 @@ export default function Dashboard() {
         <div className="dashboard-side">
 
           <TransferWindowCard
-            status={state.transferWindow.status}
-            subtitle={state.transferWindow.subtitle}
-          />
-
-          <PreseasonTourCard
-            country={state.preseason.country}
-            played={state.preseason.played}
-            total={state.preseason.total}
-            nextOpponent={
-              state.preseason.nextOpponent ?? undefined
-            }
-            daysUntilMatch={
-              state.preseason.daysUntilMatch ?? undefined
-            }
+            title={state.context.title}
+            subtitle={state.context.subtitle}
           />
 
         </div>
@@ -89,11 +75,41 @@ export default function Dashboard() {
             Recent Results
           </span>
 
-          {state.recentResults.map((fixture, index) => (
+          {state.recentResults.map((fixture) => (
 
             <FixtureCard
-              key={index}
-              {...fixture}
+              key={fixture.id}
+
+              date={fixture.date.toLocaleDateString()}
+
+              opponent={
+                fixture.homeClubId
+              }
+
+              competition={
+                fixture.competition
+              }
+
+              venue={
+                fixture.venue === "HOME"
+                  ? "Home"
+                  : "Away"
+              }
+
+              completed={true}
+
+              score={`${fixture.homeGoals}-${fixture.awayGoals}`}
+
+              result={
+                fixture.homeGoals! >
+                fixture.awayGoals!
+                  ? "W"
+                  : fixture.homeGoals! <
+                    fixture.awayGoals!
+                  ? "L"
+                  : "D"
+              }
+
             />
 
           ))}
@@ -106,11 +122,27 @@ export default function Dashboard() {
             Upcoming Fixtures
           </span>
 
-          {state.upcomingFixtures.map((fixture, index) => (
+          {state.upcomingFixtures.map((fixture) => (
 
             <FixtureCard
-              key={index}
-              {...fixture}
+              key={fixture.id}
+
+              date={fixture.date.toLocaleDateString()}
+
+              opponent={
+                fixture.homeClubId
+              }
+
+              competition={
+                fixture.competition
+              }
+
+              venue={
+                fixture.venue === "HOME"
+                  ? "Home"
+                  : "Away"
+              }
+
             />
 
           ))}
@@ -120,6 +152,7 @@ export default function Dashboard() {
       </section>
 
     </main>
+
   );
 
 }

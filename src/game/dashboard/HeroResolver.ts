@@ -1,3 +1,6 @@
+import { preseasonManager } from "../preseason/PreseasonManager";
+import { transferWindowManager } from "../transfers/TransferWindowManager";
+
 export interface HeroState {
   title: string;
   subtitle: string;
@@ -10,48 +13,88 @@ export class HeroResolver {
     date: Date
   ): HeroState {
 
-    // Transfer Deadline Day
+    const transfer =
+      transferWindowManager.getStatus(
+        date
+      );
+
     if (
-      date.getMonth() === 7 &&
-      date.getDate() === 31
+      transfer.status ===
+      "DEADLINE DAY"
     ) {
+
       return {
-        title: "Transfer Deadline Day",
-        subtitle: "Final day of the summer window",
-        objective: "Complete any remaining transfer business.",
+
+        title:
+          "Transfer Deadline Day",
+
+        subtitle:
+          "Final chance to strengthen your squad.",
+
+        objective:
+          "Complete all remaining transfer business before the window closes.",
+
       };
+
     }
 
-    // Preseason
+    const preseason =
+      preseasonManager.getStatus();
+
     if (
-      date.getMonth() === 6 ||
-      (date.getMonth() === 7 && date.getDate() <= 7)
+      preseason.total > 0 &&
+      preseason.played <
+        preseason.total
     ) {
+
       return {
-        title: "Preseason",
-        subtitle: "Prepare your squad",
-        objective: "Build match fitness before the new season.",
+
+        title:
+          "Preseason Tour",
+
+        subtitle:
+          preseason.country,
+
+        objective:
+          preseason.nextFixture
+            ? "Prepare your squad and build match fitness."
+            : "Finish preseason strongly.",
+
       };
+
     }
 
-    // Season Start
     if (
-      date.getMonth() === 7 &&
-      date.getDate() >= 8 &&
-      date.getDate() <= 15
+      transfer.status ===
+      "OPEN"
     ) {
+
       return {
-        title: "New Season",
-        subtitle: "The campaign begins",
-        objective: "Start the season strongly.",
+
+        title:
+          "Transfer Window",
+
+        subtitle:
+          `${transfer.daysRemaining} days remaining`,
+
+        objective:
+          "Improve your squad before the window closes.",
+
       };
+
     }
 
-    // Default
     return {
-      title: "Manager",
-      subtitle: "Club Season",
-      objective: "Continue managing your club.",
+
+      title:
+        "Club Season",
+
+      subtitle:
+        "No major events today.",
+
+      objective:
+        "Prepare for the next competitive fixture.",
+
     };
 
   }

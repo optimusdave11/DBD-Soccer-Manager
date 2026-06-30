@@ -1,12 +1,12 @@
 import "./TransferWindowCard.css";
 
 interface Props {
-  status: "OPEN" | "CLOSED" | "DEADLINE DAY";
+  title: string;
   subtitle: string;
 }
 
 export default function TransferWindowCard({
-  status,
+  title,
   subtitle,
 }: Props) {
 
@@ -14,11 +14,11 @@ export default function TransferWindowCard({
     <section className="transfer-window-card">
 
       <span className="transfer-window-label">
-        Transfer Window
+        Current Focus
       </span>
 
       <h2 className="transfer-window-status">
-        {status}
+        {title}
       </h2>
 
       <p className="transfer-window-subtitle">
@@ -26,6 +26,7 @@ export default function TransferWindowCard({
       </p>
 
     </section>
+
   );
 
 }

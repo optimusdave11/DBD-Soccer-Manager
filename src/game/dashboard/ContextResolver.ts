@@ -17,11 +17,23 @@ export class ContextResolver {
         date
       );
 
-    if (transfer.status === "OPEN") {
+    if (
+      transfer.status === "OPEN" ||
+      transfer.status === "DEADLINE DAY"
+    ) {
 
       return {
-        title: transfer.status,
-        subtitle: `${transfer.daysRemaining} days remaining`,
+
+        title:
+          transfer.status === "DEADLINE DAY"
+            ? "Deadline Day"
+            : "Transfer Window",
+
+        subtitle:
+          transfer.status === "DEADLINE DAY"
+            ? "Final day of business."
+            : `${transfer.daysRemaining} days remaining`,
+
       };
 
     }
@@ -31,21 +43,32 @@ export class ContextResolver {
 
     if (
       preseason.total > 0 &&
-      preseason.played < preseason.total
+      preseason.played <
+        preseason.total
     ) {
 
       return {
-        title: preseason.country,
-        subtitle: `${preseason.played}/${preseason.total} matches played`,
+
+        title:
+          `Preseason Tour • ${preseason.country}`,
+
+        subtitle:
+          preseason.nextFixture
+            ? `${preseason.played}/${preseason.total} matches played`
+            : "Tour complete",
+
       };
 
     }
 
-    // Placeholder priorities
-
     return {
-      title: "Top Story",
-      subtitle: "No major events today.",
+
+      title:
+        "Club News",
+
+      subtitle:
+        "No breaking stories today.",
+
     };
 
   }

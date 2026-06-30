@@ -1,8 +1,10 @@
+import { fixtureManager } from "../fixtures/FixtureManager";
+
 export class ResultsResolver {
 
   resolve() {
 
-    return [];
+    return fixtureManager.getRecentResults(5);
 
   }
 

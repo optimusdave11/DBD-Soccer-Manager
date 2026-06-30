@@ -1,83 +1,59 @@
 import { heroResolver } from "./HeroResolver";
 import { contextResolver } from "./ContextResolver";
 import { inboxResolver } from "./InboxResolver";
-import { resultsResolver } from "./ResultsResolver";
 import { fixturesResolver } from "./FixturesResolver";
-
-import { preseasonManager } from "../preseason/PreseasonManager";
+import { resultsResolver } from "./ResultsResolver";
 
 export interface DashboardState {
 
-  hero: {
-    title: string;
-    subtitle: string;
-    objective: string;
-  };
+  hero: ReturnType<
+    typeof heroResolver.resolve
+  >;
 
-  context: {
-    title: string;
-    subtitle: string;
-  };
+  context: ReturnType<
+    typeof contextResolver.resolve
+  >;
 
-  preseason: {
-    country: string;
-    played: number;
-    total: number;
-    nextOpponent: string | null;
-    daysUntilMatch: number | null;
-  };
+  inbox: ReturnType<
+    typeof inboxResolver.resolve
+  >;
 
-  inbox: {
-    sender: string;
-    subject: string;
-    date: string;
-    unread: boolean;
-  } | null;
+  upcomingFixtures: ReturnType<
+    typeof fixturesResolver.resolve
+  >;
 
-  recentResults: any[];
-
-  upcomingFixtures: any[];
+  recentResults: ReturnType<
+    typeof resultsResolver.resolve
+  >;
 
 }
 
 export class DashboardManager {
 
-  getState(): DashboardState {
-
-    const today = new Date();
-
-    const preseason =
-      preseasonManager.getStatus();
+  getState(
+    date: Date = new Date()
+  ): DashboardState {
 
     return {
 
       hero:
         heroResolver.resolve(
-          today
+          date
         ),
 
       context:
         contextResolver.resolve(
-          today
+          date
         ),
-
-      preseason: {
-        country: preseason.country,
-        played: preseason.played,
-        total: preseason.total,
-        nextOpponent:
-          preseason.nextFixture?.opponentId ?? null,
-        daysUntilMatch: null,
-      },
 
       inbox:
         inboxResolver.resolve(),
 
-      recentResults:
-        resultsResolver.resolve(),
-
       upcomingFixtures:
         fixturesResolver.resolve(),
+
+      recentResults:
+        resultsResolver.resolve(),
 
     };
 
