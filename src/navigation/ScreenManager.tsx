@@ -33,36 +33,78 @@ const dummyOffers = [
 ];
 
 export default function ScreenManager() {
-  const [screen, setScreen] = useState<Screen>("mainMenu");
+
+  const [screen, setScreen] =
+    useState<Screen>("mainMenu");
 
   switch (screen) {
+
     case "mainMenu":
+
       return (
+
         <MainMenu
-          onNewCareer={() => setScreen("newCareer")}
+
+          openNewCareer={() =>
+            setScreen("newCareer")
+          }
+
+          openLoadCareer={() => {
+            // TODO
+          }}
+
+          openSettings={() => {
+            // TODO
+          }}
+
         />
+
       );
 
     case "newCareer":
+
       return (
+
         <NewCareer
-          onBack={() => setScreen("mainMenu")}
-          onContinue={() => setScreen("jobOffers")}
+
+          onBack={() =>
+            setScreen("mainMenu")
+          }
+
+          onContinue={() =>
+            setScreen("jobOffers")
+          }
+
         />
+
       );
 
     case "jobOffers":
+
       return (
+
         <JobOffers
+
           offers={dummyOffers}
-          onBack={() => setScreen("newCareer")}
+
+          onBack={() =>
+            setScreen("newCareer")
+          }
+
           onViewOffer={(offer) => {
+
             console.log(offer);
+
           }}
+
         />
+
       );
 
     default:
+
       return null;
+
   }
+
 }
