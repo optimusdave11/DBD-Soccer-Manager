@@ -1,41 +1,57 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import MainMenu from "../screens/MainMenu/MainMenu";
 import NewCareer from "../screens/NewCareer/NewCareer";
 import JobOffers from "../screens/JobOffers/JobOffers";
+import ManagerOffer from "../screens/ManagerOffer/ManagerOffer";
+import Dashboard from "../screens/Dashboard/Dashboard";
+
+import { jobOfferManager } from "../game/joboffers/JobOfferManager";
+import { contractManager } from "../game/contracts/ContractManager";
+import { contractDatabase } from "../game/contracts/ContractDatabase";
 
 type Screen =
   | "mainMenu"
   | "newCareer"
-  | "jobOffers";
-
-const dummyOffers = [
-  {
-    club: "Burnley",
-    league: "Premier League",
-    squadRating: 73,
-  },
-  {
-    club: "Rennes",
-    league: "Ligue 1",
-    squadRating: 75,
-  },
-  {
-    club: "Torino",
-    league: "Serie A",
-    squadRating: 74,
-  },
-  {
-    club: "Mainz",
-    league: "Bundesliga",
-    squadRating: 76,
-  },
-];
+  | "jobOffers"
+  | "managerOffer"
+  | "dashboard";
 
 export default function ScreenManager() {
 
   const [screen, setScreen] =
     useState<Screen>("mainMenu");
+
+  const [offers, setOffers] =
+    useState<any[]>([]);
+
+  const [managerProfile, setManagerProfile] =
+    useState<any>(null);
+
+  const [selectedOffer, setSelectedOffer] =
+    useState<any>(null);
+
+  const [managerContract, setManagerContract] =
+    useState<any>(null);
+
+  useEffect(() => {
+
+    if (screen !== "jobOffers") {
+      return;
+    }
+
+    async function loadOffers() {
+
+      const generated =
+        await jobOfferManager.generateOffers();
+
+      setOffers(generated);
+
+    }
+
+    loadOffers();
+
+  }, [screen]);
 
   switch (screen) {
 
@@ -67,13 +83,17 @@ export default function ScreenManager() {
 
         <NewCareer
 
-          onBack={() =>
+          openMainMenu={() =>
             setScreen("mainMenu")
           }
 
-          onContinue={() =>
-            setScreen("jobOffers")
-          }
+          openJobOffers={(manager) => {
+
+            setManagerProfile(manager);
+
+            setScreen("jobOffers");
+
+          }}
 
         />
 
@@ -85,7 +105,7 @@ export default function ScreenManager() {
 
         <JobOffers
 
-          offers={dummyOffers}
+          offers={offers}
 
           onBack={() =>
             setScreen("newCareer")
@@ -93,13 +113,83 @@ export default function ScreenManager() {
 
           onViewOffer={(offer) => {
 
-            console.log(offer);
+            setSelectedOffer(offer);
+
+            const contract =
+              contractManager.generateManagerContract(
+
+                offer.clubId,
+
+                offer.reputation,
+
+                managerProfile.reputation,
+
+                offer.leagueId,
+
+                offer.leagueRank
+
+              );
+
+            setManagerContract(contract);
+
+            setScreen(
+              "managerOffer"
+            );
 
           }}
 
         />
 
       );
+
+    case "managerOffer":
+
+      return (
+
+        <ManagerOffer
+
+          contract={managerContract}
+
+          clubName={
+            selectedOffer.club
+          }
+
+          leagueName={
+            selectedOffer.league
+          }
+
+          onAccept={() => {
+
+            contract.personId =
+              managerProfile.id;
+
+            contractDatabase.add(
+              managerContract
+            );
+
+            // TODO
+            // Generate preseason
+            // Generate inbox
+            // Generate dashboard state
+            // Generate save
+
+            setScreen(
+              "dashboard"
+            );
+
+          }}
+
+          onReject={() =>
+            setScreen("jobOffers")
+          }
+
+        />
+
+      );
+
+    case "dashboard":
+
+      return <Dashboard />;
 
     default:
 

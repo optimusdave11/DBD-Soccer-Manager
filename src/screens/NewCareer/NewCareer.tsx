@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import FMLayout from "../../components/FMLayout/FMLayout";
 import FMButton from "../../components/FMButton/FMButton";
 import FMInput from "../../components/FMInput/FMInput";
 import FMSelect from "../../components/FMSelect/FMSelect";
 
+import { nationDatabase } from "../../game/db/NationDatabase";
+
 import "./NewCareer.css";
 
 interface Props {
   openMainMenu: () => void;
+  openJobOffers: (manager: {
+    name: string;
+    nationality: string;
+    age: number;
+    tacticalStyle: string;
+  }) => void;
 }
 
 const TACTICAL_STYLES = [
@@ -36,13 +44,17 @@ const AGES = [
 
 export default function NewCareer({
   openMainMenu,
+  openJobOffers,
 }: Props) {
 
   const [managerName, setManagerName] =
     useState("");
 
+  const [nationalities, setNationalities] =
+    useState<string[]>([]);
+
   const [nationality, setNationality] =
-    useState("Nigeria");
+    useState("");
 
   const [age, setAge] =
     useState("35");
@@ -50,8 +62,33 @@ export default function NewCareer({
   const [tacticalStyle, setTacticalStyle] =
     useState("Balanced");
 
+  useEffect(() => {
+
+    async function loadNations() {
+
+      await nationDatabase.load();
+
+      const nations =
+        nationDatabase
+          .getAll()
+          .map(n => n.Name)
+          .sort();
+
+      setNationalities(nations);
+
+      if (nations.length > 0) {
+        setNationality(nations[0]);
+      }
+
+    }
+
+    loadNations();
+
+  }, []);
+
   const canContinue =
-    managerName.trim().length > 0;
+    managerName.trim().length > 0 &&
+    nationality !== "";
 
   return (
 
@@ -85,7 +122,7 @@ export default function NewCareer({
           <FMSelect
             label="Nationality"
             value={nationality}
-            options={["Nigeria"]}
+            options={nationalities}
             onChange={setNationality}
           />
 
@@ -106,6 +143,14 @@ export default function NewCareer({
           <FMButton
             text="Continue"
             disabled={!canContinue}
+            onClick={() =>
+              openJobOffers({
+                name: managerName.trim(),
+                nationality,
+                age: Number(age),
+                tacticalStyle,
+              })
+            }
           />
 
         </div>
