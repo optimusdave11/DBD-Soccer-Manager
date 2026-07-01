@@ -1,20 +1,31 @@
+import { useEffect } from "react";
+
 import "./Dashboard.css";
 
 import { dashboardManager } from "../../game/dashboard/DashboardManager";
+
+import { clubDatabase } from "../../db/ClubDatabase";
 
 import TopBar from "../../components/TopBar/TopBar";
 import HeroCard from "../../components/HeroCard/HeroCard";
 import TransferWindowCard from "../../components/TransferWindowCard/TransferWindowCard";
 import InboxCard from "../../components/InboxCard/InboxCard";
 import FixtureCard from "../../components/FixtureCard/FixtureCard";
-import Button from "../../components/Button/Button";
+import FMButton from "../../components/FMButton/FMButton";
 
 export default function Dashboard() {
 
   const state =
     dashboardManager.getState();
 
+  useEffect(() => {
+
+    clubDatabase.load();
+
+  }, []);
+
   return (
+
     <main className="dashboard">
 
       <TopBar />
@@ -38,8 +49,8 @@ export default function Dashboard() {
 
           </div>
 
-          <Button
-            label="Continue"
+          <FMButton
+            text="Continue"
             onClick={() => {}}
           />
 
@@ -80,10 +91,15 @@ export default function Dashboard() {
             <FixtureCard
               key={fixture.id}
 
-              date={fixture.date.toLocaleDateString()}
+              date={
+                fixture.date.toLocaleDateString()
+              }
 
               opponent={
-                fixture.homeClubId
+                clubDatabase.getClub(
+                  String(fixture.homeClubId)
+                )?.ClubName ??
+                "Unknown Club"
               }
 
               competition={
@@ -127,10 +143,15 @@ export default function Dashboard() {
             <FixtureCard
               key={fixture.id}
 
-              date={fixture.date.toLocaleDateString()}
+              date={
+                fixture.date.toLocaleDateString()
+              }
 
               opponent={
-                fixture.homeClubId
+                clubDatabase.getClub(
+                  String(fixture.homeClubId)
+                )?.ClubName ??
+                "Unknown Club"
               }
 
               competition={
