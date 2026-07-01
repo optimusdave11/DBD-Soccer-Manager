@@ -1,6 +1,6 @@
 import type { Player } from "../models/database/Player";
 
-import { playerSeeder } from "./PlayerSeeder";
+import { playerSeeder } from "../seed/PlayerSeeder";
 
 export class PlayerDatabase {
 
@@ -41,7 +41,8 @@ export class PlayerDatabase {
 
     return this.players.filter(
       player =>
-        player.ClubID === clubId
+        player.ClubID ===
+        clubId
     );
 
   }

@@ -1,6 +1,6 @@
 import type { Club } from "../models/database/Club";
 
-import { clubSeeder } from "./ClubSeeder";
+import { clubSeeder } from "../seed/ClubSeeder";
 
 export class ClubDatabase {
 
