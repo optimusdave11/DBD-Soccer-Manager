@@ -5,12 +5,13 @@ import FMButton from "../../components/FMButton/FMButton";
 import FMInput from "../../components/FMInput/FMInput";
 import FMSelect from "../../components/FMSelect/FMSelect";
 
-import { nationDatabase } from "../../game/db/NationDatabase";
+import { nationDatabase } from "../../db/NationDatabase";
 
 import "./NewCareer.css";
 
 interface Props {
   openMainMenu: () => void;
+
   openJobOffers: (manager: {
     name: string;
     nationality: string;
@@ -71,13 +72,26 @@ export default function NewCareer({
       const nations =
         nationDatabase
           .getAll()
-          .map(n => n.Name)
-          .sort();
+          .map(
+            nation => nation.name
+          )
+          .sort(
+            (a, b) =>
+              a.localeCompare(b)
+          );
 
-      setNationalities(nations);
+      setNationalities(
+        nations
+      );
 
-      if (nations.length > 0) {
-        setNationality(nations[0]);
+      if (
+        nations.length > 0
+      ) {
+
+        setNationality(
+          nations[0]
+        );
+
       }
 
     }
@@ -87,7 +101,11 @@ export default function NewCareer({
   }, []);
 
   const canContinue =
-    managerName.trim().length > 0 &&
+
+    managerName
+      .trim()
+      .length > 0 &&
+
     nationality !== "";
 
   return (
@@ -144,12 +162,21 @@ export default function NewCareer({
             text="Continue"
             disabled={!canContinue}
             onClick={() =>
+
               openJobOffers({
-                name: managerName.trim(),
+
+                name:
+                  managerName.trim(),
+
                 nationality,
-                age: Number(age),
+
+                age:
+                  Number(age),
+
                 tacticalStyle,
+
               })
+
             }
           />
 
