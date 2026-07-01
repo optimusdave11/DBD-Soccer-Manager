@@ -6,7 +6,7 @@ import JobOffers from "../screens/JobOffers/JobOffers";
 import ManagerOffer from "../screens/ManagerOffer/ManagerOffer";
 import Dashboard from "../screens/Dashboard/Dashboard";
 
-import { jobOfferManager } from "../game/joboffers/JobOfferManager";
+// import { jobOfferManager } from "../game/joboffers/JobOfferManager";
 import { contractManager } from "../game/contracts/ContractManager";
 import { contractDatabase } from "../game/contracts/ContractDatabase";
 
@@ -42,10 +42,7 @@ export default function ScreenManager() {
 
     async function loadOffers() {
 
-      const generated =
-        await jobOfferManager.generateOffers();
-
-      setOffers(generated);
+      setOffers([]);
 
     }
 
